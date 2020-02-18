@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link  href="sass/style.scss">
+
+    <title>News Api</title>
+  </head>
+  <body class="container">
+
+  <h1 class="jumbotron"> News Api</h1>
+
+  <div class="row my-5 px-2 bg-light">
+    <select id="country" class="col mr-5 mt-3 mb-3 bg-info text-light" name="country">
+      <option selected> Choose Country </option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="newzealand">New Zealand</option>
+      <option value="uk">United Kingdon</option>
+      <option value="usa">United States</option>
+
+    </select>
+
+    <select id="category" class="col mr-5 mt-3 mb-3 bg-info text-light" name="category">
+      <option value="choose"> Choose Category </option>
+      <option value="business">Business</option>
+      <option value="entertainment">Entertainment</option>
+      <option value="health">Health</option>
+      <option value="science">Science</option>
+      <option value="sports">Sports</option>
+      <option value="technology">Technology</option>
+
+    </select>
+
+    <button type="button" id="submit" class="col mt-3 mb-3 btn btn-primary btn-lg text-light">Display</button>
+
+  </div>
+
+  <div class="row" id="result"> </div>
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/config.json"></script>
+  <script src="js/script.js"></script>
+  </body>
+</html>
