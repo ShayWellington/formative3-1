@@ -26,12 +26,12 @@ function displayData(co, ca){
       console.log(data);
 
       var img = data.articles[0].urlToImage;
-      var title = data.articles[0].title;
+      var title = data.articles[0].title ;
       var description = data.articles[0].description;
       console.log(img, title, description);
 
-
-      for (i = 0; i < data.length; i++) {
+      var i;
+      for (i = 0; i < data.articles.length; i++) {
         document.getElementById('result').innerHTML +=
         '<div class="col">' +
           '<div class="card" style="width: 18rem;">' +
@@ -52,4 +52,11 @@ function displayData(co, ca){
 
   }); //ajax
   } // displayData ends here
+
+    // Clear div
+    document.getElementById('reset').addEventListener('click',function(){
+    document.getElementById('result').innerHTML = " ";
+    });
+
+
   }); // document.ready
