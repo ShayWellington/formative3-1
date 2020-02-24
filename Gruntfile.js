@@ -28,12 +28,6 @@ module.exports = function(grunt) {
       }
     },
     csslint: {
-      // strict: {
-      //   options: {
-      //     import: 2
-      //   },
-      //   src: ['css/*.css','!*.min.css']//do not include min files
-      // },
       lax: {
         options: {
           import: false,
@@ -44,6 +38,38 @@ module.exports = function(grunt) {
     },
     jshint: {
       all: ['Gruntfile.js', 'js/*.js']
+    },
+    cssmin: {
+      options: {
+        mergeIntoShorthands: false,
+        roundingPrecision: -1
+      },
+      target: {
+        files: {
+          'output.css': ['foo.css', 'bar.css']
+        }
+      }
+    },imagemin: {
+        static: {
+            options: {
+                optimizationLevel: 3,
+                svgoPlugins: [{removeViewBox: false}],
+                use: [mozjpeg()] // Example plugin usage
+            },
+            files: {
+                'dist/img.png': 'src/img.png',
+                'dist/img.jpg': 'src/img.jpg',
+                'dist/img.gif': 'src/img.gif'
+            }
+        },
+        dynamic: {
+            files: [{
+                expand: true,
+                cwd: 'src/',
+                src: ['**/*.{png,jpg,gif}'],
+                dest: 'dist/'
+            }]
+        }
     }
   });
 
@@ -53,9 +79,11 @@ module.exports = function(grunt) {
      grunt.loadNpmTasks('grunt-contrib-sass');
      grunt.loadNpmTasks('grunt-contrib-csslint');
      grunt.loadNpmTasks('grunt-contrib-jshint');
+     grunt.loadNpmTasks('grunt-contrib-cssmin');
+     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   // Default task(s).
     grunt.registerTask('ugly', ['uglify']);
     grunt.registerTask('default', ['watch']); //run this using grunt test
-
+    grunt.registerTask('test', ['imagemin']);
 };

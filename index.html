@@ -12,12 +12,23 @@
   </head>
   <body class="container">
 
-  <div class="jumbotron jumbotron-fluid">
-    <h1 class="display-3 mx-auto ml-5"> News Api</h1>
-    <a class="btn mx-auto btn-primary float-right text-light" href="about.html">Click me</a>
+    <ul class="nav justify-content-end">
+      <li class="About">
+        <a class="nav-link active" href="about.html">About</a>
+      </li>
+    </ul>
+
+  <div class="jumbotron topBar">
+    <h1 class="heading display-3 mx-auto ml-5"> News Api</h1>
   </div>
 
-  <div class="row my-5 px-2 bg-light">
+  <div class="searchDiv">
+    <!-- <label class="searchLabel" for="search">Search</label> -->
+    <input type="text" class="form" class="searchForm align-baseline" id="search">
+  </div>
+
+
+  <div class="row my-2 px-2 ">
     <select id="country" class="col mr-5 mt-3 mb-3 bg-primary text-light" name="country">
       <option selected> Choose Country </option>
       <option value="au">Australia</option>
@@ -42,8 +53,9 @@
     <button type="button" id="submit" class="col mt-3 mb-3 btn btn-primary text-light">Display</button>
     <button type="button" id="reset" class="col mt-3 mb-3 ml-5 btn btn-secondary text-light">Reset</button>
 
-
   </div>
+
+
 
   <div class="row" id="result">
   </div>

@@ -10,16 +10,17 @@ $(document).ready(function(){
 
   //reading users choice
     document.getElementById('submit').addEventListener('click',function(){
+      search = document.getElementById('search').value;
       country = document.getElementById('country').value;
       category = document.getElementById('category').value;
-      console.log(country, category); // actual parameter
-      displayData(country, category); // actual parameter
+      console.log(country, category, search); // actual parameter
+      displayData(country, category, search); // actual parameter
     });
 
-function displayData(co, ca){
+function displayData(co, ca, se){
 
   $.ajax({
-    url: `http://newsapi.org/v2/top-headlines?country=${co}&category=${ca}&apiKey=${myKey}`,
+    url: `http://newsapi.org/v2/top-headlines?q=${se}&country=${co}&category=${ca}&apiKey=${myKey}`,
     type: 'GET',
     data: 'json',
     success: function(data) {
