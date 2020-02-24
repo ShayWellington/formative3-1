@@ -4,13 +4,13 @@ $(document).ready(function(){
 
   $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
-})
+  })
 
   //accessing key from json file
   var myKey = JSON.parse(apiKey);
-  console.log(myKey[0]);
+  // console.log(myKey[0]);
   myKey = myKey[0].key;
-  console.log(myKey);
+  // console.log(myKey);
 
   //reading users choice
     document.getElementById('submit').addEventListener('click',function(){

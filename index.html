@@ -10,14 +10,13 @@
 
     <title>News Api</title>
   </head>
-  <body class="container">
+  <body>
 
     <ul class="nav justify-content-end">
       <li class="About">
         <a class="nav-link active" data-toggle="modal" data-target="#exampleModal">About</a>
       </li>
     </ul>
-
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -39,26 +38,16 @@
   </div>
 </div>
 
-
-
-
-
   <div class="jumbotron topBar">
     <h1 class="heading display-3 mx-auto ml-5"> News Api</h1>
   </div>
 
-
+<div class="container">
 
   <div class="row my-2 px-2 ">
 
-
-
-        <!-- <label class="searchLabel" for="search">Search</label> -->
-        <input type="text" class="form" class="searchForm align-baseline" id="search">
-
-
     <select id="country" class="col mr-5 mt-3 mb-3 bg-primary text-light" name="country">
-      <option selected> Choose Country </option>
+      <option selected>Country </option>
       <option value="au">Australia</option>
       <option value="ca">Canada</option>
       <option value="nz">New Zealand</option>
@@ -68,7 +57,7 @@
     </select>
 
     <select id="category" class="col mr-5 mt-3 mb-3 bg-primary text-light" name="category">
-      <option value="choose"> Choose Category </option>
+      <option value="choose">Category </option>
       <option value="business">Business</option>
       <option value="entertainment">Entertainment</option>
       <option value="health">Health</option>
@@ -78,6 +67,8 @@
 
     </select>
 
+    <input type="text" class="form" class="searchForm align-baseline" id="search">
+
     <button type="button" id="submit" class="col mt-3 mb-3 btn btn-primary text-light">Display</button>
     <button type="button" id="reset" class="col mt-3 mb-3 ml-5 btn btn-secondary text-light">Reset</button>
 
@@ -86,6 +77,7 @@
 
 
   <div class="row" id="result">
+  </div>
   </div>
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
