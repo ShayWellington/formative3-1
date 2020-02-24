@@ -2,6 +2,10 @@ console.log('news-api'); //testing script
 
 $(document).ready(function(){
 
+  $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+
   //accessing key from json file
   var myKey = JSON.parse(apiKey);
   console.log(myKey[0]);
@@ -58,6 +62,8 @@ function displayData(co, ca, se){
     document.getElementById('reset').addEventListener('click',function(){
     document.getElementById('result').innerHTML = " ";
     });
+
+
 
 
   }); // document.ready
